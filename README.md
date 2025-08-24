@@ -18,7 +18,7 @@ I enjoy working on impactful products, experimenting fast, and bringing ideas to
 ### 🔗 Links
 - 🔹 [LinkedIn](https://linkedin.com/in/adityasharma14)  
 - 🔹 [Portfolio](https://adisharma.dev)  
-- 🔹 [Resume (PDF)](./resume.pdf)  
+- 🔹 [Resume (PDF)](/src/resumemain.pdf)
 
 ### 📂 Project Overview
 This project demonstrates:  
