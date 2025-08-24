@@ -1,0 +1,90 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 223 47% 11%;
+    --foreground: 213 31% 91%;
+    
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 20% 98%;
+    
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 213 31% 91%;
+    
+    --muted: 215 25% 27%;
+    --muted-foreground: 218 11% 65%;
+    
+    --accent: 215 25% 27%;
+    --accent-foreground: 213 31% 91%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 213 31% 91%;
+    
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 263 70% 50%;
+    
+    --radius: 0.75rem;
+    
+    --editor-bg: 220 13% 18%;
+    --editor-panel: 224 71% 4%;
+    --editor-accent: 263 70% 50%;
+    --editor-accent-muted: 263 70% 35%;
+    --editor-highlight: 46 87% 65%;
+    --editor-text: 213 31% 91%;
+    --editor-text-muted: 218 11% 65%;
+    
+    --glass-bg: 224 71% 4% / 0.8;
+    --glass-border: 263 70% 50% / 0.2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/80 backdrop-blur-xl border border-white/10 rounded-xl;
+  }
+  
+  .editor-highlight {
+    @apply ring-2 ring-yellow-400 ring-opacity-75 relative;
+  }
+  
+  .editor-highlight::before {
+    content: '';
+    @apply absolute inset-0 bg-yellow-400/10 pointer-events-none rounded;
+  }
+  
+  .gradient-border {
+    @apply relative rounded-xl;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl p-px bg-gradient-to-r from-purple-500 to-blue-500;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+  }
+}
