@@ -105,6 +105,7 @@ app.post('/analyze-code', async (req, res) => {
     res.json({
       analysis: sections.analysis || 'Analysis completed',
       suggestions: sections.suggestions || [],
+      complexity: 'medium', // Add missing complexity field
       issues: sections.issues || [],
     });
   } catch (error) {
