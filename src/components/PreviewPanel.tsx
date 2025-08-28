@@ -1,7 +1,5 @@
 
-import { useEffect } from 'react';
-import { LiveProvider, LivePreview, LiveError } from 'react-live';
-import { AlertCircle } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import { ElementData } from '@/pages/Index';
 
 interface PreviewPanelProps {
@@ -11,6 +9,7 @@ interface PreviewPanelProps {
 }
 
 export const PreviewPanel = ({ code, onElementSelect, selectedElement }: PreviewPanelProps) => {
+  const previewRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     if (selectedElement) {
@@ -71,40 +70,41 @@ export const PreviewPanel = ({ code, onElementSelect, selectedElement }: Preview
     onElementSelect(elementData);
   };
 
+  // Convert JSX-like code to HTML and render it
+  const renderPreview = () => {
+    try {
+      // Simple JSX to HTML conversion for basic elements
+      let htmlCode = code
+        .replace(/className=/g, 'class=')
+        .replace(/<br\s*\/?>/g, '<br>')
+        .replace(/<hr\s*\/?>/g, '<hr>');
+      
+      // Add a wrapper div with proper text color to ensure visibility
+      htmlCode = `<div class="text-foreground">${htmlCode}</div>`;
+      
+      return { __html: htmlCode };
+    } catch (error) {
+      console.error('Error rendering preview:', error);
+      return { __html: '<div class="text-red-500">Error rendering component</div>' };
+    }
+  };
+
   return (
-    <div className="h-full flex flex-col bg-white">
-      <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
-        <h2 className="font-medium text-gray-900">Live Preview</h2>
-        <div className="text-sm text-gray-500">
+    <div className="h-full flex flex-col bg-background">
+      <div className="flex items-center justify-between p-4 border-b border-border bg-card">
+        <h2 className="font-medium text-foreground">Live Preview</h2>
+        <div className="text-sm text-muted-foreground">
           Click any element to edit its properties
         </div>
       </div>
       
-      <div className="flex-1 overflow-auto">
-        <LiveProvider code={code} noInline={false}>
-          <div className="h-full relative">
-            <div 
-              className="min-h-full cursor-pointer"
-              onClick={handleElementClick}
-            >
-              <LivePreview className="h-full" />
-            </div>
-            
-            <LiveError className="absolute top-4 left-4 right-4 bg-red-50 border border-red-200 rounded-lg p-4">
-              {({ error }) => (
-                <div className="flex items-start gap-3">
-                  <AlertCircle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium text-red-900 mb-1">Component Error</h3>
-                    <pre className="text-sm text-red-700 whitespace-pre-wrap">
-                      {error?.message}
-                    </pre>
-                  </div>
-                </div>
-              )}
-            </LiveError>
-          </div>
-        </LiveProvider>
+      <div className="flex-1 overflow-auto p-4 bg-background">
+        <div 
+          ref={previewRef}
+          className="min-h-full cursor-pointer text-foreground"
+          onClick={handleElementClick}
+          dangerouslySetInnerHTML={renderPreview()}
+        />
       </div>
     </div>
   );

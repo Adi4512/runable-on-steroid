@@ -4,8 +4,6 @@ import { CodeEditor } from '@/components/CodeEditor';
 import { PreviewPanel } from '@/components/PreviewPanel';
 import { PropertiesPanel } from '@/components/PropertiesPanel';
 import { Header } from '@/components/Header';
-import Footer from '@/components/Footer';
-
 const defaultCode = `<div className="p-8 text-center">
   <h1 className="text-4xl font-bold text-blue-600 mb-4">
     Welcome to runable on steroids
@@ -84,7 +82,7 @@ const Index = () => {
           />
         </div>
       </div>
-      <Footer />
+    
     </div>
   );
 };

@@ -22,6 +22,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -89,6 +90,14 @@ export default {
             height: '0'
           }
         },
+        'line-shadow': {
+          '0%': {
+            backgroundPosition: '0 0'
+          },
+          '100%': {
+            backgroundPosition: '100% -100%'
+          }
+        },
         'fade-in': {
           from: {
             opacity: '0',
@@ -111,6 +120,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'line-shadow': 'line-shadow 15s linear infinite',
         'fade-in': 'fade-in 0.3s ease-out',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
       }
