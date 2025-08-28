@@ -7,7 +7,7 @@ import { Header } from '@/components/Header';
 import AIAnalysis from '@/components/Aianalysis';
 const defaultCode = `<div className="p-8 text-center">
   <h1 className="text-4xl font-bold text-blue-600 mb-4">
-    Welcome to runable on steroids
+    Welcome to ReactRun AI
   </h1>
   <p className="text-lg text-gray-600 mb-6">
     Click on any element to edit its font size,color and content

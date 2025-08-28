@@ -15,7 +15,7 @@ export const Header = ({ onSave }: HeaderProps) => {
           <div className="flex items-center gap-2">
             <Code className="w-6 h-6 text-editor-accent" />
             <h1 className="text-xl font-semibold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text">
-              Runable on steroids
+              ReactRun AI
             </h1>
           </div>
         </div>

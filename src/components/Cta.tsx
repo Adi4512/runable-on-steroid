@@ -16,7 +16,7 @@ const CTA = () => {
                 of React components?
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Join thousands of developers who are already creating amazing components with React Palette AI.
+                Join thousands of developers who are already creating amazing components with ReactRun AI.
               </p>
             </div>
 
@@ -27,10 +27,17 @@ const CTA = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Button variant="outline" size="lg">
-                <Github className="w-4 h-4" />
-                View on GitHub
-              </Button>
+              
+              <a 
+                href="https://github.com/Adi4512/runable-on-steroid"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="lg">
+                  <Github className="w-4 h-4" />
+                  View on GitHub
+                </Button>
+              </a>
             </div>
 
             <div className="flex items-center justify-center gap-8 pt-8 text-sm text-muted-foreground">

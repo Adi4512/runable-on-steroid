@@ -1,6 +1,10 @@
 import { Heart, ExternalLink } from "lucide-react";
 
+
+
 const Footer = () => {
+const getYear=new Date().getFullYear();
+
   return (
     <footer className="relative border-t border-white/10 bg-gradient-card backdrop-blur-xl">
       <div className="container mx-auto px-6 py-8">
@@ -21,7 +25,7 @@ const Footer = () => {
           </div>
           
           <div className="text-xs text-muted-foreground/70">
-            © 2024 React Palette AI. Built with passion for the developer community.
+            `© ${getYear} Run React AI. Built with passion for the developer community.`
           </div>
         </div>
       </div>

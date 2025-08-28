@@ -85,7 +85,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/preview">
                 <Button variant="default" size="lg" className="group">
-                  Start Creating
+                  Build Something Amazing
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>

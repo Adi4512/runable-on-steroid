@@ -1,7 +1,7 @@
 {
-  "name": "runable-backend",
+  "name": "reactrun-ai-backend",
   "version": "1.0.0",
-  "description": "Backend API for code analysis",
+  "description": "Backend API for ReactRun AI code analysis",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
