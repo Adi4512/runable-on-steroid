@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { ElementData } from '@/pages/Index';
+import AIAnalysis from '@/components/Aianalysis';
 
 interface PreviewPanelProps {
   code: string;
@@ -80,12 +81,12 @@ export const PreviewPanel = ({ code, onElementSelect, selectedElement }: Preview
         .replace(/<hr\s*\/?>/g, '<hr>');
       
       // Add a wrapper div with proper text color to ensure visibility
-      htmlCode = `<div class="text-foreground">${htmlCode}</div>`;
+      htmlCode = `<div class=\"text-foreground\">${htmlCode}</div>`;
       
       return { __html: htmlCode };
     } catch (error) {
       console.error('Error rendering preview:', error);
-      return { __html: '<div class="text-red-500">Error rendering component</div>' };
+      return { __html: '<div class=\"text-red-500\">Error rendering component</div>' };
     }
   };
 
@@ -98,6 +99,7 @@ export const PreviewPanel = ({ code, onElementSelect, selectedElement }: Preview
         </div>
       </div>
       
+      {/* Main preview area */}
       <div className="flex-1 overflow-auto p-4 bg-background">
         <div 
           ref={previewRef}
@@ -106,6 +108,9 @@ export const PreviewPanel = ({ code, onElementSelect, selectedElement }: Preview
           dangerouslySetInnerHTML={renderPreview()}
         />
       </div>
+
+      {/* Bottom AI Analysis */}
+   
     </div>
   );
 };
