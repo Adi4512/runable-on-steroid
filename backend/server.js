@@ -65,7 +65,7 @@ app.post('/analyze-code', async (req, res) => {
     }
 
     const response = await openai.chat.completions.create({
-      model: 'openai/gpt-oss-20b:free',
+      model: 'deepseek/deepseek-chat-v3.1:free',
       messages: [
         {
           role: "system",
