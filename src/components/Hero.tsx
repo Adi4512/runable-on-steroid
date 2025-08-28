@@ -1,12 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
+import { useState, useEffect } from "react";
 
 import { ArrowRight, Sparkles, Eye, Zap, Code2 } from "lucide-react";
 import { Link } from "react-router-dom";
+
+// Preload the hero image immediately
 const heroImage = "/img1.jpg";
 
+// Preload image function
+const preloadImage = (src: string) => {
+  const img = new Image();
+  img.src = src;
+  return img;
+};
+
+// Start preloading immediately when module loads
+preloadImage(heroImage);
+
 const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}
@@ -14,15 +29,26 @@ const Hero = () => {
       <div className="absolute inset-0 mesh-gradient" />
       <div className="absolute inset-0 aurora-bg" />
       
-            {/* Hero Background Image */}
+      {/* Hero Background Image with optimizations */}
       <img
         src={heroImage}
         alt="Hero Background"
-        className="absolute inset-0 w-full h-full object-cover"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+          imageLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
         style={{
           filter: 'brightness(0.9) contrast(1) saturate(1.2)'
         }}
+        loading="eager"
+        decoding="async"
+        fetchPriority="high"
+        onLoad={() => setImageLoaded(true)}
       />
+      
+      {/* Fallback gradient while image loads */}
+      {!imageLoaded && (
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900" />
+      )}
       
       {/* Dark Overlay for Text Readability */}
       <div className="absolute inset-0 bg-black/40" />
