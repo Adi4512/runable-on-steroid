@@ -29,12 +29,13 @@ const AIAnalysis = ({ code }: AIAnalysisProps) => {
     setAnalysis(null);
 
     try {
-      const response = await fetch('http://localhost:3000/analyze-code', {
+      const backendUrl =  import.meta.env.VITE_BACKEND_URL;
+      const response = await fetch(`${backendUrl}/analyze-code`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code }),
       });
-
+      console.log(response);
       if (!response.ok) {
         throw new Error('Failed to analyze code');
       }

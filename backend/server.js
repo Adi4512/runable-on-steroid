@@ -52,6 +52,9 @@ function parseMarkdownResponse(content) {
   sections.analysis = sections.analysis.trim();
   return sections;
 }
+app.get('/',(req,res)=>{
+  res.json({message:"Hello World from render"})
+})
 
 app.post('/analyze-code', async (req, res) => {
   try {
@@ -79,10 +82,7 @@ app.post('/analyze-code', async (req, res) => {
       - List any errors or issues.
       - If none, write: "No critical issues found ✅"
       
-      Keep it concise, avoid self-references, and do not output JSON.
-DO NOT USE these lines analysisWe need to produce a code review report with sections: Code Analysis, Suggestions, Errors / Issues. The code is a simple JSX snippet. We need to analyze. Summarize what it does
-      directlt put out analysis, suggestions, and issues
-      `
+      Keep it concise, avoid self-references, and do not output JSON.`
 
         },
         {
