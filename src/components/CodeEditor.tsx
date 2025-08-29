@@ -28,37 +28,48 @@ export const CodeEditor = ({ code, onChange }: CodeEditorProps) => {
   };
 
   return (
-    <div className="h-full flex flex-col bg-editor-panel">
-      <div className="flex items-center justify-between p-4 border-b border-border">
-        <h2 className="font-medium text-editor-text">Component Code</h2>
+    <div className="h-full flex flex-col bg-gradient-to-br from-editor-panel/95 to-editor-panel/90 backdrop-blur-sm">
+      <div className="flex items-center justify-between p-4 border-b border-border/50 bg-gradient-to-r from-purple-500/5 to-blue-500/5">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-lg shadow-green-400/50"></div>
+          <h2 className="font-semibold text-editor-text bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
+            Component Code
+          </h2>
+        </div>
         <div className="flex gap-2">
           <Button 
             variant="ghost" 
             size="sm" 
             onClick={handlePaste}
-            className="hover:bg-editor-accent/10"
+            className="hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-blue-500/20 border border-transparent hover:border-purple-500/30 transition-all duration-300 hover:scale-105 hover:shadow-lg backdrop-blur-sm"
           >
-            <Clipboard className="w-4 h-4 mr-1" />
+            <Clipboard className="w-4 h-4 mr-1 text-purple-400" />
             Paste
           </Button>
           <Button 
             variant="ghost" 
             size="sm" 
             onClick={handleCopy}
-            className="hover:bg-editor-accent/10"
+            className={`transition-all duration-300 hover:scale-105 hover:shadow-lg backdrop-blur-sm border border-transparent ${
+              isCopied 
+                ? 'bg-gradient-to-r from-green-500/20 to-emerald-500/20 border-green-500/30 text-green-300' 
+                : 'hover:bg-gradient-to-r hover:from-purple-500/20 hover:to-blue-500/20 hover:border-purple-500/30'
+            }`}
           >
-            <Copy className="w-4 h-4 mr-1" />
+            <Copy className={`w-4 h-4 mr-1 transition-colors ${isCopied ? 'text-green-400' : 'text-purple-400'}`} />
             {isCopied ? 'Copied!' : 'Copy'}
           </Button>
         </div>
       </div>
       
-      <div className="flex-1 p-4">
+      <div className="flex-1 p-4 relative">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-4 opacity-5 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg"></div>
         <Textarea
           value={code}
           onChange={(e) => onChange(e.target.value)}
-          className="h-full font-mono text-sm bg-editor-bg border-editor-accent/30 focus:border-editor-accent resize-none"
-          placeholder="Paste your React component code here..."
+          className="h-full font-mono text-sm bg-gradient-to-br from-editor-bg/90 to-editor-bg/95 border-2 border-editor-accent/20 focus:border-purple-500/50 focus:shadow-lg focus:shadow-purple-500/25 resize-none rounded-xl backdrop-blur-sm transition-all duration-300 hover:border-editor-accent/30 relative z-10"
+          placeholder="✨ Paste your React component code here and watch the magic happen..."
         />
       </div>
     </div>

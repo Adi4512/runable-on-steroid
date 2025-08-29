@@ -32,11 +32,9 @@ export interface ElementData {
 const Index = () => {
   const [code, setCode] = useState(defaultCode);
   const [selectedElement, setSelectedElement] = useState<ElementData | null>(null);
-  const [isPropertiesPanelOpen, setIsPropertiesPanelOpen] = useState(false);
 
   const handleElementSelect = (element: ElementData) => {
     setSelectedElement(element);
-    setIsPropertiesPanelOpen(true);
   };
 
   const handlePropertyChange = (property: string, value: string) => {
@@ -56,15 +54,12 @@ const Index = () => {
     console.log('Property changed:', property, value);
   };
 
-  const handleSaveCode = () => {
-    window.location.reload();
-    alert('Component saved successfully!');
-  };
+
 
   return (
     <>
     <div className="min-h-screen bg-background text-foreground">
-      <Header onSave={handleSaveCode} />
+      <Header/>
       <div className="flex h-[calc(100vh-4rem)]">
         <div className="w-1/3 border-r border-border">
           <CodeEditor code={code} onChange={setCode} />
@@ -80,7 +75,7 @@ const Index = () => {
           <PropertiesPanel
             element={selectedElement}
             onPropertyChange={handlePropertyChange}
-            onClose={() => setIsPropertiesPanelOpen(false)}
+            onClose={() => setSelectedElement(null)}
           />
         </div>
       </div>
