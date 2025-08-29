@@ -11,7 +11,7 @@ const getYear=new Date().getFullYear();
         <div className="flex flex-col items-center justify-center space-y-4">
           <div className="flex items-center gap-2 text-muted-foreground">
             <span>Crafted with</span>
-            <Heart className="w-4 h-4 text-red-500 animate-pulse" />
+            💜
             <span>by</span>
             <a 
               href="https://adisharma.dev" 
@@ -25,7 +25,7 @@ const getYear=new Date().getFullYear();
           </div>
           
           <div className="text-xs text-muted-foreground/70">
-            `© ${getYear} Run React AI. Built with passion for the developer community.`
+            © {getYear} Run React AI. Built with passion for the developer community.
           </div>
         </div>
       </div>

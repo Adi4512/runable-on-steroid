@@ -12,7 +12,7 @@ const CTA = () => {
             <div className="space-y-6">
               <h2 className="text-4xl lg:text-6xl font-bold font-inter">
                 Ready to build the
-                <span className="bg-gradient-primary bg-clip-text"> future </span>
+                <span className="bg-gradient-primary bg-clip-text font-extrabold italic animate-pulse hover:scale-105 transition-transform duration-500"> future </span>
                 of React components?
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

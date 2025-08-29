@@ -43,8 +43,7 @@
 
 <div align="center">
   <a href="https://runreactai.vercel.app" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/Adi4512/cdnforportfoliovideos/img1.webp
-" alt="ReactRun AI Demo" />
+    <img src="public/img1.jpg" alt="ReactRun AI Demo" />
   </a>
   <p><em>Click to experience the magic of visual React development</em></p>
 </div>
