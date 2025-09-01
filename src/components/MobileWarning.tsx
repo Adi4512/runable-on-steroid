@@ -8,10 +8,10 @@ export const MobileWarning = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      // Check if screen width is less than 1024px (tablet/mobile)
+
       const isMobile = window.innerWidth < 1024;
       
-      // Check if user has already dismissed the warning in this session
+
       const hasBeenDismissed = sessionStorage.getItem('mobile-warning-dismissed');
       
       if (isMobile && !hasBeenDismissed && !dismissed) {
@@ -21,10 +21,10 @@ export const MobileWarning = () => {
       }
     };
 
-    // Check on mount
+
     checkScreenSize();
 
-    // Check on resize
+
     window.addEventListener('resize', checkScreenSize);
     
     return () => window.removeEventListener('resize', checkScreenSize);
@@ -33,7 +33,7 @@ export const MobileWarning = () => {
   const handleDismiss = () => {
     setShowWarning(false);
     setDismissed(true);
-    // Remember dismissal for this session
+
     sessionStorage.setItem('mobile-warning-dismissed', 'true');
   };
 
@@ -42,7 +42,7 @@ export const MobileWarning = () => {
   return (
     <div className="fixed inset-0 z-[9999] bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-400 rounded-2xl shadow-2xl max-w-md w-full mx-4 relative overflow-hidden">
-        {/* Animated background pattern */}
+
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `radial-gradient(circle at 25px 25px, rgba(251, 191, 36, 0.3) 2px, transparent 0)`,
@@ -50,9 +50,9 @@ export const MobileWarning = () => {
           }}></div>
         </div>
         
-        {/* Warning content */}
+
         <div className="relative z-10 p-6">
-          {/* Header */}
+
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <div className="relative">
@@ -73,7 +73,7 @@ export const MobileWarning = () => {
             </Button>
           </div>
 
-          {/* Warning message */}
+
           <div className="space-y-4">
             <div className="bg-yellow-100/80 border border-yellow-300 rounded-lg p-4">
               <p className="text-yellow-900 font-medium mb-2">
@@ -85,7 +85,7 @@ export const MobileWarning = () => {
               </p>
             </div>
 
-            {/* Recommendations */}
+
             <div className="flex items-center gap-3 bg-gradient-to-r from-yellow-100/50 to-amber-100/50 rounded-lg p-4 border border-yellow-200">
               <Monitor className="w-6 h-6 text-yellow-700 flex-shrink-0" />
               <div>
@@ -96,7 +96,7 @@ export const MobileWarning = () => {
               </div>
             </div>
 
-            {/* Action buttons */}
+
             <div className="flex gap-3 pt-2">
               <Button
                 onClick={handleDismiss}

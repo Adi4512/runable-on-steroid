@@ -32,7 +32,7 @@ export const CodeEditor = ({ code, onChange }: CodeEditorProps) => {
       <div className="flex items-center justify-between p-4 border-b border-border/50 bg-gradient-to-r from-purple-500/5 to-blue-500/5">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-lg shadow-green-400/50"></div>
-          <h2 className="font-semibold text-editor-text bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
+          <h2 className="font-semibold  bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
             Component Code
           </h2>
         </div>
@@ -63,7 +63,7 @@ export const CodeEditor = ({ code, onChange }: CodeEditorProps) => {
       </div>
       
       <div className="flex-1 p-4 relative">
-        {/* Subtle background pattern */}
+
         <div className="absolute inset-4 opacity-5 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg"></div>
         <Textarea
           value={code}

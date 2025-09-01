@@ -6,17 +6,17 @@ import { useState, useEffect } from "react";
 import { ArrowRight, Sparkles, Eye, Zap, Code2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Preload the hero image immediately
+
 const heroImage = "/img1.jpg";
 
-// Preload image function
+
 const preloadImage = (src: string) => {
   const img = new Image();
   img.src = src;
   return img;
 };
 
-// Start preloading immediately when module loads
+
 preloadImage(heroImage);
 
 const Hero = () => {
@@ -24,12 +24,12 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Elements */}
+     
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 mesh-gradient" />
       <div className="absolute inset-0 aurora-bg" />
       
-      {/* Hero Background Image with optimizations */}
+
       <img
         src={heroImage}
         alt="Hero Background"
@@ -45,15 +45,15 @@ const Hero = () => {
         onLoad={() => setImageLoaded(true)}
       />
       
-      {/* Fallback gradient while image loads */}
+
       {!imageLoaded && (
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900" />
       )}
       
-      {/* Dark Overlay for Text Readability */}
+
       <div className="absolute inset-0 bg-black/40" />
       
-      {/* Enhanced Floating Elements */}
+
       <div className="absolute top-20 left-10 w-3 h-3 bg-accent rounded-full animate-float shadow-lg shadow-accent/50" />
       <div className="absolute top-40 right-20 w-2 h-2 bg-primary rounded-full animate-float shadow-lg shadow-primary/50" style={{ animationDelay: '1s' }} />
       <div className="absolute bottom-32 left-20 w-2.5 h-2.5 bg-accent rounded-full animate-float shadow-lg shadow-accent/50" style={{ animationDelay: '2s' }} />
@@ -62,7 +62,7 @@ const Hero = () => {
 
       <div className="relative z-10 w-full h-full flex items-center">
         <div className="w-full">
-          {/* Content */}
+
           <div className="space-y-8 animate-fade-in text-left ml-20">
             <div className="space-y-6 max-w-2xl">
               <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-sm font-medium text-white drop-shadow-lg">
@@ -89,9 +89,24 @@ const Hero = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
+              <a 
+          href="https://www.producthunt.com/products/runreact-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-runreact&#0045;ai" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-[-10px]"
+        >
+          <img 
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1011082&theme=neutral&t=1756589973283" 
+            alt="RunReact AI - Visual react component editor with in built AI analysis | Product Hunt" 
+            style={{width: '240px', height: '44px'}}
+            width="240"
+            height="44"
+            className="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          />
+        </a>
             </div>
 
-            {/* Features Preview */}
+
             <div className="grid grid-cols-3 gap-4 pt-8 max-w-md">
               <div className="text-center">
                 <div className="w-12 h-12 glass rounded-lg flex items-center justify-center mx-auto mb-3">

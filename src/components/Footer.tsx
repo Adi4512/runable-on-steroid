@@ -30,7 +30,7 @@ const getYear=new Date().getFullYear();
         </div>
       </div>
       
-      {/* Subtle glow effect */}
+
       <div className="absolute inset-0 bg-gradient-primary opacity-[0.02] pointer-events-none" />
     </footer>
   );

@@ -35,12 +35,12 @@ const FloatingElements = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      {/* Animated gradient orbs */}
+
       <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full animate-float blur-xl" />
       <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-r from-accent/20 to-primary/20 rounded-full animate-float blur-xl" style={{ animationDelay: '2s' }} />
       <div className="absolute bottom-32 left-1/4 w-20 h-20 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full animate-float blur-xl" style={{ animationDelay: '4s' }} />
       
-      {/* Floating particles */}
+
       {particles.map((particle) => (
         <div
           key={particle.id}
@@ -57,11 +57,11 @@ const FloatingElements = () => {
         />
       ))}
 
-      {/* Animated lines */}
+
       <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent animate-pulse" />
       <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-pulse" style={{ animationDelay: '3s' }} />
       
-      {/* Geometric shapes */}
+
       <div className="absolute top-1/3 right-10 w-6 h-6 border border-accent/40 rotate-45 animate-spin-slow" />
       <div className="absolute bottom-1/3 left-10 w-4 h-4 bg-primary/30 animate-bounce-slow" />
     </div>

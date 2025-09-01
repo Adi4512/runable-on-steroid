@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    /* Base colors - Dark theme by default for modern dev tool aesthetic */
+
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
 
@@ -15,19 +15,19 @@
     --popover: 224 71% 4%;
     --popover-foreground: 213 31% 91%;
 
-    /* Primary brand colors - Purple gradient */
+
     --primary: 262 83% 58%;
     --primary-foreground: 210 20% 98%;
     --primary-hover: 262 83% 65%;
 
-    /* Secondary colors - Darker purple */
+
     --secondary: 215 28% 17%;
     --secondary-foreground: 210 20% 98%;
 
     --muted: 215 28% 17%;
     --muted-foreground: 217 10% 65%;
 
-    /* Accent colors - Cyan for highlights */
+
     --accent: 186 100% 69%;
     --accent-foreground: 224 71% 4%;
 
@@ -40,27 +40,27 @@
 
     --radius: 0.75rem;
 
-    /* Custom brand colors */
+
     --brand-purple: 262 83% 58%;
     --brand-cyan: 186 100% 69%;
     --brand-dark: 224 71% 4%;
     --brand-gray: 215 28% 17%;
 
-    /* Gradients */
+
     --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(186 100% 69%));
     --gradient-card: linear-gradient(135deg, hsl(215 28% 17% / 0.8), hsl(224 71% 4% / 0.9));
     --gradient-hero: linear-gradient(135deg, hsl(224 71% 4%), hsl(215 28% 17%));
 
-    /* Shadows with brand colors */
+
     --shadow-glow: 0 0 50px hsl(262 83% 58% / 0.3);
     --shadow-card: 0 10px 30px -10px hsl(224 71% 4% / 0.5);
     --shadow-elegant: 0 20px 60px -20px hsl(262 83% 58% / 0.2);
 
-  /* Animations */
+
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-  /* Modern mesh gradients */
+
   --gradient-mesh: radial-gradient(circle at 25% 25%, hsl(262 83% 58% / 0.2) 0%, transparent 50%), 
                    radial-gradient(circle at 75% 75%, hsl(186 100% 69% / 0.2) 0%, transparent 50%);
   --gradient-aurora: linear-gradient(45deg, hsl(262 83% 58% / 0.1), hsl(186 100% 69% / 0.1), hsl(300 100% 80% / 0.1));
@@ -81,7 +81,7 @@
 
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Editor-specific variables */
+
     --editor-bg: 224 71% 4%;
     --editor-panel: 215 28% 17%;
     --editor-accent: 186 100% 69%;
@@ -92,7 +92,7 @@
   }
 
   .light {
-    /* Light theme overrides if needed */
+
     --background: 0 0% 100%;
     --foreground: 224 71% 4%;
     --card: 0 0% 100%;
@@ -112,7 +112,7 @@
     background: var(--gradient-hero);
   }
 
-  /* Glassmorphism utility classes */
+
   .glass {
     @apply backdrop-blur-xl bg-white/10 border border-white/20;
   }
@@ -122,7 +122,7 @@
     @apply backdrop-blur-xl border border-white/10 shadow-2xl;
   }
 
-  /* Animation utilities */
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -141,7 +141,7 @@
     to { box-shadow: 0 0 30px hsl(262 83% 58% / 0.6); }
   }
 
-  /* Hover effects */
+
   .hover-lift {
     @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
   }
@@ -154,12 +154,12 @@
     box-shadow: var(--shadow-glow);
   }
 
-  /* Modern mesh background */
+
   .mesh-gradient {
     background: var(--gradient-mesh);
   }
 
-  /* Aurora effect */
+
   .aurora-bg {
     background: var(--gradient-aurora);
     animation: aurora 8s ease-in-out infinite;
@@ -216,7 +216,7 @@
     animation: text-shimmer 3s linear infinite;
   }
 
-  /* Cyberpunk Aurora Text Effect */
+
   .aurora-text {
     background: linear-gradient(
       45deg,
@@ -252,7 +252,7 @@
     }
   }
 
-  /* Bento grid effect */
+
   .bento-card {
     background: linear-gradient(135deg, hsl(var(--card) / 0.8), hsl(var(--muted) / 0.4));
     backdrop-filter: blur(20px);

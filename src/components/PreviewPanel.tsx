@@ -71,16 +71,16 @@ export const PreviewPanel = ({ code, onElementSelect, selectedElement }: Preview
     onElementSelect(elementData);
   };
 
-  // Convert JSX-like code to HTML and render it
+
   const renderPreview = () => {
     try {
-      // Simple JSX to HTML conversion for basic elements
+
       let htmlCode = code
         .replace(/className=/g, 'class=')
         .replace(/<br\s*\/?>/g, '<br>')
         .replace(/<hr\s*\/?>/g, '<hr>');
       
-      // Add a wrapper div with proper text color to ensure visibility
+
       htmlCode = `<div class=\"text-foreground\">${htmlCode}</div>`;
       
       return { __html: htmlCode };
@@ -110,9 +110,9 @@ export const PreviewPanel = ({ code, onElementSelect, selectedElement }: Preview
       </div>
     
       
-      {/* Main preview area */}
+
       <div className="flex-1 overflow-auto p-6 bg-gradient-to-br from-background/90 to-background/95 relative">
-        {/* Animated background grid */}
+
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-transparent to-blue-500/20"></div>
           <div className="absolute inset-0" style={{
@@ -128,7 +128,7 @@ export const PreviewPanel = ({ code, onElementSelect, selectedElement }: Preview
           dangerouslySetInnerHTML={renderPreview()}
         />
         
-        {/* Floating preview indicator */}
+
        
       </div>
     </div>

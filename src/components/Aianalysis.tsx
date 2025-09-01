@@ -50,7 +50,7 @@ const AIAnalysis = ({ code }: AIAnalysisProps) => {
     }
   };
 
-  // Removed auto-analysis - only analyze when button is clicked
+
 
 
 
@@ -182,7 +182,7 @@ const AIAnalysis = ({ code }: AIAnalysisProps) => {
         )}
       </div>
       
-      {/* Free AI Model Disclaimer */}
+
       <div className="mt-4 p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
         <div className="flex items-start gap-2">
           <span className="text-yellow-500 text-sm">ℹ</span>

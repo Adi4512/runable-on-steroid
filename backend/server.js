@@ -12,7 +12,7 @@ const openai = new OpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
 });
 
-// Function to parse markdown response and extract sections
+
 function parseMarkdownResponse(content) {
   const sections = {
     analysis: '',
@@ -20,7 +20,7 @@ function parseMarkdownResponse(content) {
     issues: []
   };
 
-  // Split content by sections
+
   const lines = content.split('\n');
   let currentSection = '';
   
@@ -99,13 +99,13 @@ app.post('/analyze-code', async (req, res) => {
       throw new Error('No response from AI');
     }
 
-    // Parse markdown response and extract sections
+
     const sections = parseMarkdownResponse(content);
     
     res.json({
       analysis: sections.analysis || 'Analysis completed',
       suggestions: sections.suggestions || [],
-      complexity: 'medium', // Add missing complexity field
+      complexity: 'medium',
       issues: sections.issues || [],
     });
   } catch (error) {

@@ -16,7 +16,7 @@ export const PropertiesPanel = ({ element, onPropertyChange, onClose }: Properti
   if (!element) {
     return (
       <div className="h-full bg-gradient-to-br from-editor-panel/95 to-editor-panel/90 backdrop-blur-sm flex items-center justify-center relative overflow-hidden">
-        {/* Animated background */}
+
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5"></div>
         <div className="absolute inset-0" style={{
           backgroundImage: `radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%)`,
@@ -44,7 +44,7 @@ export const PropertiesPanel = ({ element, onPropertyChange, onClose }: Properti
 
   return (
     <div className="h-full bg-gradient-to-br from-editor-panel/95 to-editor-panel/90 backdrop-blur-sm flex flex-col relative overflow-hidden">
-      {/* Animated background */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-purple-500/3 to-blue-500/3"></div>
       
       <div className="flex items-center justify-between p-4 border-b border-border/50 bg-gradient-to-r from-purple-500/5 to-blue-500/5 backdrop-blur-xl relative z-10">
@@ -65,7 +65,7 @@ export const PropertiesPanel = ({ element, onPropertyChange, onClose }: Properti
       </div>
       
       <div className="flex-1 overflow-auto p-4 space-y-6 relative z-10">
-        {/* Selected Element Card */}
+
         <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-4 rounded-xl border border-white/20 shadow-lg hover:shadow-purple-500/25 transition-all duration-300">
           <div className="text-xs text-editor-text-muted mb-2 flex items-center gap-2">
             <div className="w-1 h-1 rounded-full bg-purple-400"></div>
@@ -77,7 +77,7 @@ export const PropertiesPanel = ({ element, onPropertyChange, onClose }: Properti
         </div>
 
     
-        {/* Text Content Section */}
+
         {element.hasOwnProperty('textContent') && (
           <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-4 rounded-xl border border-white/20 shadow-lg space-y-3">
             <div className="flex items-center gap-2 text-sm font-semibold text-editor-text">
@@ -100,7 +100,7 @@ export const PropertiesPanel = ({ element, onPropertyChange, onClose }: Properti
           </div>
         )}
 
-        {/* Typography Section */}
+
         <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-4 rounded-xl border border-white/20 shadow-lg space-y-3">
           <div className="flex items-center gap-2 text-sm font-semibold text-editor-text">
             <Weight className="w-4 h-4 text-purple-400" />
@@ -133,7 +133,7 @@ export const PropertiesPanel = ({ element, onPropertyChange, onClose }: Properti
           </div>
         </div>
 
-        {/* Color Section */}
+
         <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl p-4 rounded-xl border border-white/20 shadow-lg space-y-3">
           <div className="flex items-center gap-2 text-sm font-semibold text-editor-text">
             <Palette className="w-4 h-4 text-pink-400" />
